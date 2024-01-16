@@ -46,6 +46,7 @@ fun SocialMediaLogin(
         Icon(
             painter = painterResource(id = icon),
             contentDescription = null,
+            tint = Color.Unspecified,
             modifier = Modifier.size(16.dp)
         )
 
