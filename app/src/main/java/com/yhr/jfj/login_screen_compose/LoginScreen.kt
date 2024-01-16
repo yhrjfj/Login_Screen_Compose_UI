@@ -28,10 +28,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.yhr.jfj.login_screen_compose.ui.theme.Black
 import com.yhr.jfj.login_screen_compose.ui.theme.BlueGray
+import com.yhr.jfj.login_screen_compose.ui.theme.Roboto
 
 @Composable
 fun LoginScreen() {
@@ -53,6 +58,39 @@ fun LoginScreen() {
                 Spacer(modifier = Modifier.height(30.dp))
 
                 SocialMediaSection()
+
+                val uiColor = if (isSystemInDarkTheme()) Color.White else Black
+                Box(
+                    modifier = Modifier
+                        .fillMaxHeight(0.8f)
+                        .fillMaxWidth(),
+                    contentAlignment = Alignment.BottomCenter
+                ) {
+                    Text(
+                        text = buildAnnotatedString {
+                            withStyle(
+                                style = SpanStyle(
+                                    color = Color(0xFF94A3B8),
+                                    fontSize = 14.sp,
+                                    fontFamily = Roboto,
+                                    fontWeight = FontWeight.Normal
+                                )
+                            ) {
+                                append("Don't have an account? ")
+                            }
+                            withStyle(
+                                style = SpanStyle(
+                                    color = uiColor,
+                                    fontSize = 14.sp,
+                                    fontFamily = Roboto,
+                                    fontWeight = FontWeight.Medium
+                                )
+                            ) {
+                                append("Create Now")
+                            }
+                        }
+                    )
+                }
             }
         }
     }
