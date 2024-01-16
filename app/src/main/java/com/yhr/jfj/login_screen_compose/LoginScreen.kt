@@ -2,6 +2,7 @@ package com.yhr.jfj.login_screen_compose
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -49,7 +50,45 @@ fun LoginScreen() {
             ) {
                 LoginSection()
 
-                // Social Media log in
+                Spacer(modifier = Modifier.height(30.dp))
+
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                ) {
+                    Text(
+                        text = "Or Continue With",
+                        style = MaterialTheme.typography.labelMedium.copy(color = Color(0xFF64748B))
+                    )
+
+                    Spacer(modifier = Modifier.height(20.dp))
+
+                    // Social Media log in
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        SocialMediaLogin(
+                            icon = R.drawable.google,
+                            text = "Google",
+                            modifier = Modifier
+                                .weight(1f)
+                                .align(Alignment.CenterVertically)
+                        ) {
+                            // TODO: Implement 
+                        }
+
+                        Spacer(modifier = Modifier.width(20.dp))
+
+                        SocialMediaLogin(
+                            icon = R.drawable.facebook,
+                            text = "Facebook",
+                            modifier = Modifier.weight(1f)
+                        ) {
+                            // TODO: Implement
+                        }
+                    }
+                }
+
 
             }
         }
