@@ -47,39 +47,49 @@ fun LoginScreen() {
                     .fillMaxSize()
                     .padding(horizontal = 30.dp)
             ) {
-                // Email
-                LoginTextField(
-                    label = stringResource(id = R.string.email),
-                    trailing = "",
-                    modifier = Modifier.fillMaxWidth()
-                )
-                Spacer(modifier = Modifier.height(15.dp))
+                LoginSection()
 
-                // Password
-                LoginTextField(
-                    label = stringResource(id = R.string.password),
-                    trailing = "Forgot?",
-                    modifier = Modifier.fillMaxWidth()
-                )
-                Spacer(modifier = Modifier.height(20.dp))
-                Button(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(40.dp),
-                    onClick = { /*TODO*/ },
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = if (isSystemInDarkTheme()) BlueGray else Black,
-                        contentColor = Color.White
-                    ),
-                    shape = RoundedCornerShape(4.dp)
-                ) {
-                    Text(
-                        text = "Log in",
-                        style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Medium)
-                    )
-                }
+                // Social Media log in
+
             }
         }
+    }
+}
+
+@Composable
+private fun LoginSection() {
+    // Email
+    LoginTextField(
+        label = stringResource(id = R.string.email),
+        trailing = "",
+        modifier = Modifier.fillMaxWidth()
+    )
+    Spacer(modifier = Modifier.height(15.dp))
+
+    // Password
+    LoginTextField(
+        label = stringResource(id = R.string.password),
+        trailing = "Forgot?",
+        modifier = Modifier.fillMaxWidth()
+    )
+    Spacer(modifier = Modifier.height(20.dp))
+
+    // Button for log in
+    Button(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(40.dp),
+        onClick = { /*TODO*/ },
+        colors = ButtonDefaults.buttonColors(
+            containerColor = if (isSystemInDarkTheme()) BlueGray else Black,
+            contentColor = Color.White
+        ),
+        shape = RoundedCornerShape(4.dp)
+    ) {
+        Text(
+            text = "Log in",
+            style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Medium)
+        )
     }
 }
 
