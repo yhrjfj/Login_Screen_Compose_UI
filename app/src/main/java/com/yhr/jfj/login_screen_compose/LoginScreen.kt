@@ -68,6 +68,14 @@ fun LoginScreen() {
                         )
                     }
                 }
+                Text(
+                    text = stringResource(id = R.string.login),
+                    style = MaterialTheme.typography.headlineLarge,
+                    color = uiColor,
+                    modifier = Modifier
+                        .padding(bottom = 10.dp)
+                        .align(Alignment.BottomCenter)
+                )
             }
         }
     }
