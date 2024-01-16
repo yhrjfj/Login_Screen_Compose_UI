@@ -4,4 +4,6 @@
     <string name="the_tolet">The Tolet</string>
     <string name="find_house">Find Your House</string>
     <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
 </resources>
