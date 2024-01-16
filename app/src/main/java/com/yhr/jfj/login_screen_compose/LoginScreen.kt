@@ -52,44 +52,47 @@ fun LoginScreen() {
 
                 Spacer(modifier = Modifier.height(30.dp))
 
-                Column(
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                ) {
-                    Text(
-                        text = "Or Continue With",
-                        style = MaterialTheme.typography.labelMedium.copy(color = Color(0xFF64748B))
-                    )
+                SocialMediaSection()
+            }
+        }
+    }
+}
 
-                    Spacer(modifier = Modifier.height(20.dp))
+@Composable
+private fun SocialMediaSection() {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        Text(
+            text = "Or Continue With",
+            style = MaterialTheme.typography.labelMedium.copy(color = Color(0xFF64748B))
+        )
 
-                    // Social Media log in
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        verticalAlignment = Alignment.CenterVertically,
-                    ) {
-                        SocialMediaLogin(
-                            icon = R.drawable.google,
-                            text = "Google",
-                            modifier = Modifier
-                                .weight(1f)
-                                .align(Alignment.CenterVertically)
-                        ) {
-                            // TODO: Implement 
-                        }
+        Spacer(modifier = Modifier.height(20.dp))
 
-                        Spacer(modifier = Modifier.width(20.dp))
+        // Social Media log in
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            SocialMediaLogin(
+                icon = R.drawable.google,
+                text = "Google",
+                modifier = Modifier
+                    .weight(1f)
+                    .align(Alignment.CenterVertically)
+            ) {
+                // TODO: Implement
+            }
 
-                        SocialMediaLogin(
-                            icon = R.drawable.facebook,
-                            text = "Facebook",
-                            modifier = Modifier.weight(1f)
-                        ) {
-                            // TODO: Implement
-                        }
-                    }
-                }
+            Spacer(modifier = Modifier.width(20.dp))
 
-
+            SocialMediaLogin(
+                icon = R.drawable.facebook,
+                text = "Facebook",
+                modifier = Modifier.weight(1f)
+            ) {
+                // TODO: Implement
             }
         }
     }
