@@ -32,52 +32,57 @@ fun LoginScreen() {
         Column(
             modifier = Modifier.fillMaxSize()
         ) {
-            val uiColor = if (isSystemInDarkTheme()) Color.White else Black
-            Box(
-                contentAlignment = Alignment.TopCenter
-            ) {
-                Image(
-                    painter = painterResource(id = R.drawable.shape),
-                    contentDescription = "Shape",
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .fillMaxHeight(fraction = 0.46f),
-                    contentScale = ContentScale.FillBounds
-                )
-                Row(
-                    modifier = Modifier.padding(top = 80.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Icon(
-                        painter = painterResource(id = R.drawable.logo),
-                        contentDescription = stringResource(id = R.string.app_logo),
-                        modifier = Modifier.size(42.dp),
-                        tint = uiColor
-                    )
-                    Spacer(modifier = Modifier.width(15.dp))
-                    Column {
-                        Text(
-                            text = stringResource(id = R.string.the_tolet),
-                            style = MaterialTheme.typography.headlineMedium,
-                            color = uiColor
-                        )
-                        Text(
-                            text = stringResource(id = R.string.find_house),
-                            style = MaterialTheme.typography.titleMedium,
-                            color = uiColor
-                        )
-                    }
-                }
+            TopSection()
+        }
+    }
+}
+
+@Composable
+private fun TopSection() {
+    val uiColor = if (isSystemInDarkTheme()) Color.White else Black
+    Box(
+        contentAlignment = Alignment.TopCenter
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.shape),
+            contentDescription = "Shape",
+            modifier = Modifier
+                .fillMaxWidth()
+                .fillMaxHeight(fraction = 0.46f),
+            contentScale = ContentScale.FillBounds
+        )
+        Row(
+            modifier = Modifier.padding(top = 80.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Icon(
+                painter = painterResource(id = R.drawable.logo),
+                contentDescription = stringResource(id = R.string.app_logo),
+                modifier = Modifier.size(42.dp),
+                tint = uiColor
+            )
+            Spacer(modifier = Modifier.width(15.dp))
+            Column {
                 Text(
-                    text = stringResource(id = R.string.login),
-                    style = MaterialTheme.typography.headlineLarge,
-                    color = uiColor,
-                    modifier = Modifier
-                        .padding(bottom = 10.dp)
-                        .align(Alignment.BottomCenter)
+                    text = stringResource(id = R.string.the_tolet),
+                    style = MaterialTheme.typography.headlineMedium,
+                    color = uiColor
+                )
+                Text(
+                    text = stringResource(id = R.string.find_house),
+                    style = MaterialTheme.typography.titleMedium,
+                    color = uiColor
                 )
             }
         }
+        Text(
+            text = stringResource(id = R.string.login),
+            style = MaterialTheme.typography.headlineLarge,
+            color = uiColor,
+            modifier = Modifier
+                .padding(bottom = 10.dp)
+                .align(Alignment.BottomCenter)
+        )
     }
 }
 
